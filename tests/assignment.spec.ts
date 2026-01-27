@@ -58,7 +58,7 @@ test.describe('ITPM Assignment 1 - Singlish to Sinhala Automation', () => {
 
       await singlishInput.fill('');
       await singlishInput.type(data.input, { delay: 20 });
-      await expect(sinhalaOutput).toContainText(data.expected, { timeout: 15000 });
+      await expect(sinhalaOutput).toContainText(data.expected, { timeout: 5000 });
     });
   }
 
@@ -87,7 +87,7 @@ test.describe('ITPM Assignment 1 - Singlish to Sinhala Automation', () => {
 
       await singlishInput.fill('');
       await singlishInput.type(data.input, { delay: 20 });
-      await expect(sinhalaOutput).toHaveText(data.expected, { timeout: 15000 });
+      await expect(sinhalaOutput).toHaveText(data.expected, { timeout: 5000 });
     });
   }
 
