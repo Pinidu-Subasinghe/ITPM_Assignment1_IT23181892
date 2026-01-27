@@ -1,0 +1,22 @@
+{
+  "name": "itpm_assignment1_it23181892",
+  "version": "1.0.0",
+  "description": "Playwright automation tests for IT3040 Assignment 1 – Sinhala transliteration system testing.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pinidu-Subasinghe/ITPM_Assignment1_IT23181892.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pinidu-Subasinghe/ITPM_Assignment1_IT23181892/issues"
+  },
+  "homepage": "https://github.com/Pinidu-Subasinghe/ITPM_Assignment1_IT23181892#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^25.0.10"
+  }
+}
