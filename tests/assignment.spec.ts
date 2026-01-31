@@ -22,7 +22,7 @@ test.describe('ITPM Assignment 1 - Singlish to Sinhala Automation', () => {
   });
 
   // ===========================================================================
-  // 1. POSITIVE FUNCTIONAL TESTS (24)
+  // 1. POSITIVE FUNCTIONAL TESTS
   // ===========================================================================
 
   const positiveTests = [
@@ -58,7 +58,12 @@ test.describe('ITPM Assignment 1 - Singlish to Sinhala Automation', () => {
 
       await singlishInput.fill('');
       await singlishInput.type(data.input, { delay: 20 });
-      await expect(sinhalaOutput).toContainText(data.expected, { timeout: 5000 });
+
+      // ✅ WAIT until translation appears (not empty)
+      await expect(sinhalaOutput).not.toHaveText('', { timeout: 15000 });
+
+      // ✅ THEN validate content
+      await expect(sinhalaOutput).toContainText(data.expected);
     });
   }
 
@@ -81,13 +86,15 @@ test.describe('ITPM Assignment 1 - Singlish to Sinhala Automation', () => {
 
   for (const data of negativeTests) {
     test(data.id, async ({ page }) => {
-      test.fail();
+      test.fail(); // Known functional limitation
 
       const { singlishInput, sinhalaOutput } = getInputs(page);
 
       await singlishInput.fill('');
       await singlishInput.type(data.input, { delay: 20 });
-      await expect(sinhalaOutput).toHaveText(data.expected, { timeout: 5000 });
+
+      await expect(sinhalaOutput).not.toHaveText('', { timeout: 15000 });
+      await expect(sinhalaOutput).toHaveText(data.expected);
     });
   }
 
@@ -99,6 +106,7 @@ test.describe('ITPM Assignment 1 - Singlish to Sinhala Automation', () => {
     const { singlishInput, sinhalaOutput } = getInputs(page);
 
     await singlishInput.type('mama', { delay: 150 });
-    await expect(sinhalaOutput).toHaveText(/මම/);
+    await expect(sinhalaOutput).toContainText('මම');
   });
+
 });
