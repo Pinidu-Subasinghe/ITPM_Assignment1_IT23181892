@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('ITPM Assignment 1 - Singlish to Sinhala Automation', () => {
+test.describe('ITPM Assignment 1 - Automated Testing', () => {
 
   test.beforeEach(async ({ page }) => {
     test.setTimeout(60000);
