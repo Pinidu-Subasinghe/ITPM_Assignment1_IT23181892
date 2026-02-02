@@ -59,10 +59,10 @@ test.describe('ITPM Assignment 1 - Automated Testing', () => {
       await singlishInput.fill('');
       await singlishInput.type(data.input, { delay: 20 });
 
-      // ✅ WAIT until translation appears (not empty)
+      // WAIT until translation appears (not empty)
       await expect(sinhalaOutput).not.toHaveText('', { timeout: 15000 });
 
-      // ✅ THEN validate content
+      // THEN validate content
       await expect(sinhalaOutput).toContainText(data.expected);
     });
   }
